@@ -1,0 +1,59 @@
+{
+  "name": "project-template",
+  "version": "0.7.1",
+  "description": "Project template with automated versioning",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "nodemon",
+    "build": "esbuild ./src --bundle --outfile=dist/index.js --platform=node",
+    "test": "jest",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "postinstall": "husky install",
+    "release": "release-it --ci"
+  },
+  "author": "Niko Kaartinen",
+  "license": "ISC",
+  "devDependencies": {
+    "@release-it/conventional-changelog": "^5.1.1",
+    "@types/jest": "^29.2.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "esbuild": "0.17.12",
+    "eslint": "^8.29.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.2",
+    "jest": "^29.3.1",
+    "nodemon": "^2.0.22",
+    "prettier": "^2.8.0",
+    "release-it": "^15.5.1",
+    "ts-jest": "^29.1.0",
+    "typescript": "^5.0.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "release-it": {
+    "git": {
+      "requireCleanWorkingDir": false
+    },
+    "npm": {
+      "publish": false
+    },
+    "github": {
+      "release": true
+    },
+    "gitlab": {
+      "release": false
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "infile": "CHANGELOG.md",
+        "preset": "angular"
+      }
+    }
+  }
+}
