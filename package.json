@@ -1,6 +1,6 @@
 {
   "name": "ds-bot",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Discord bot for dedicated server management",
   "main": "src/index.ts",
   "scripts": {
